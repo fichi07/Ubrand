@@ -1,0 +1,472 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@theme {
+  --color-primary: #d4af37;
+  --color-secondary: #b98b2f;
+  --color-black-primary: #212429;
+}
+
+@layer base {
+  * {
+    font-family: "Montserrat", sans-serif !important;
+  }
+  body {
+    margin: 0;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    font-kerning: normal;
+    font-family: "Montserrat", sans-serif !important;
+  }
+  .font-inter {
+    font-family: "Inter", sans-serif !important;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+  }
+}
+@layer components {
+  .btn {
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 178px;
+    height: auto;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: #030303;
+    padding: 0.7rem 1rem;
+    border-radius: 99rem;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-secondary);
+  }
+  .btn-secondary {
+    background-color: white;
+    color: #030303;
+    border: 2px solid var(--color-primary);
+    padding: 0.7rem 1rem;
+    border-radius: 99rem;
+    transition: background-color 0.3s ease;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+  }
+  .btn-third {
+    color: #030303;
+    border: 2px solid black;
+    padding: 0.7rem 1rem;
+    border-radius: 99rem;
+    transition: background-color 0.3s ease;
+  }
+  .btn-third:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* hero start */
+#hero-section {
+  margin: 0 auto;
+  height: 100%;
+  max-height: 810px;
+}
+.hero {
+  background-image: url("/images/background-hero.png");
+  background-size: cover;
+  background-position: center;
+  height: 810px;
+}
+
+.first-letter {
+  display: inline-block;
+  line-height: 1;
+}
+
+.first-letter::first-letter {
+  font-size: 80px;
+}
+
+.first-letter {
+  font-size: 70px;
+}
+
+@media (max-width: 640px) {
+  .first-letter::first-letter {
+    font-size: 50px;
+  }
+  .first-letter {
+    font-size: 36px;
+  }
+}
+.first-letter-h2 {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.first-letter-h2::first-letter {
+  font-size: 32px;
+}
+
+.first-letter-h2 {
+  font-size: 26px;
+}
+
+@media (max-width: 640px) {
+  .first-letter-h2::first-letter {
+    font-size: 28px;
+  }
+  .first-letter-h2 {
+    font-size: 18px;
+  }
+}
+
+.first-letter-h3 {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #212429;
+}
+
+.first-letter-h3::first-letter {
+  font-size: 24px;
+}
+
+.first-letter-h3 {
+  font-size: 20px;
+}
+
+@media (max-width: 640px) {
+  .first-letter-h3::first-letter {
+    font-size: 18px;
+  }
+  .first-letter-h3 {
+    font-size: 14px;
+  }
+}
+.first-letter-h4 {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #212429;
+}
+
+.first-letter-h4::first-letter {
+  font-size: 20px;
+}
+
+.first-letter-h4 {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .first-letter-h4::first-letter {
+    font-size: 16px;
+  }
+  .first-letter-h4 {
+    font-size: 13px;
+  }
+}
+
+.first-letter-p {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #212429;
+}
+.first-letter-p::first-letter {
+  font-size: 20px;
+}
+
+.first-letter-p {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .first-letter-p::first-letter {
+    font-size: 16px;
+  }
+  .first-letter-p {
+    font-size: 12px;
+  }
+}
+/* hero end */
+
+/* best seller start */
+
+.tab-button {
+  position: relative;
+  display: inline-block;
+}
+
+.tab-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.tab-button:hover::after {
+  transform: scaleX(1);
+}
+
+.product-card {
+  flex: 0 0 25%;
+}
+
+@media (max-width: 640px) {
+  .product-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* best seller end */
+
+#cta-section {
+  margin: 0 auto;
+  height: 100%;
+  padding: 3rem 0;
+}
+.cta {
+  background-image: url("/images/cta-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 599px;
+}
+
+@media (max-width: 640px) {
+  .cta {
+    background-image: url("/images/cta-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1000px;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.995);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -2px, 0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scale in with very soft overshoot */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-scaleIn {
+  animation: scaleIn 500ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Slide in from right, smoother approach curve */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(40px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(-4px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate-slideInRight {
+  animation: slideInRight 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Subtle pulse (less intense, longer) */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+.pulse-soft {
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* Active states (instant but smooth) */
+.image-transition {
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms ease;
+}
+.size-btn-active {
+  background-color: #1f2937;
+  color: #fff;
+  transform: scale(1.04);
+}
+.wishlist-active {
+  color: #ef4444;
+  transform: scale(1.06);
+}
+.thumbnail {
+  width: 100%;
+  max-width: 120px !important;
+}
+.thumbnail-active {
+  transform: scale(1.04);
+}
+.main-image {
+  width: 100%;
+  height: 100%;
+  max-width: 384px;
+  max-height: 577px;
+}
+@media (max-width: 640px) {
+  .thumbnail {
+    width: 100%;
+    max-width: 100px !important;
+  }
+}
+.loading-overlay {
+  background: rgba(255, 255, 255, 0.6);
+  transition: opacity 0.2s ease;
+}
+/* Shimmer loading — smoother sweep */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.icon-trash {
+  transition: filter 0.2s ease;
+}
+
+.icon-trash:hover {
+  filter: invert(0%) sepia(0%) saturate(0%) brightness(0%) contrast(100%)
+    drop-shadow(0 0 0 white);
+}
+
+/* Cart bounce, gentler spring */
+@keyframes cartBounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  65% {
+    transform: translateY(0);
+  }
+  82% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.cart-bounce {
+  animation: cartBounce 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(4px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* form checkout */
+.form-field {
+  transition: all 0.3s ease;
+}
+.form-field:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.error-shake {
+  animation: shake 0.5s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.success-pulse {
+  animation: pulse 0.6s ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
